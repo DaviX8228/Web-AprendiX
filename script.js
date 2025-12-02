@@ -329,3 +329,38 @@ window.addEventListener('scroll', () => {
 console.log('🎮 AprendiX - Aprende jugando con IA');
 console.log('💻 Desarrollado por Valdav Software');
 console.log('🚀 ¡Que comience el aprendizaje!');
+
+
+// Header scroll y toggle
+
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        if (currentScroll > lastScroll) {
+            header.classList.add('hidden');
+        } else {
+            header.classList.remove('hidden');
+        }
+    } else {
+        header.classList.remove('hidden');
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// Toggle menu hamburguesa
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
+}

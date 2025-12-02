@@ -141,7 +141,11 @@ body {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    transition: var(--transition);
+    transition: transform 0.3s ease, var(--transition);
+}
+
+.header.hidden {
+    transform: translateY(-100%);
 }
 
 .header.scrolled {
@@ -185,6 +189,15 @@ body {
     display: flex;
     align-items: center;
     gap: 2.5rem;
+}
+
+/* OCULTAR EL BOTÓN DENTRO DEL NAV EN DESKTOP */
+.nav .btn-primary {
+    display: none;
+}
+
+.nav-toggle {
+    display: none;
 }
 
 .nav-link {
@@ -320,38 +333,30 @@ body {
 }
 
 .stat-suffix {
-    /* Mismo tamaño de fuente y grosor que .stat-number */
     font-size: 2.25rem; 
     font-weight: 900;
-    
-    /* El color de .stat-suffix será el de tu variable --amarillo */
     color: var(--amarillo); 
 }
 
-/* Agrega el signo "+" */
 .stat-plus::after {
     content: "+";
     color: var(--amarillo);
-    /* Asegúrate de que tenga el mismo tamaño */
     font-size: 2.25rem; 
     font-weight: 900;
     margin-left: 0.1rem;
 }
 
 .stat-lec::after {
-        content: "+";
+    content: "+";
     color: var(--amarillo);
-    /* Asegúrate de que tenga el mismo tamaño */
     font-size: 2.25rem; 
     font-weight: 900;
     margin-left: 0.1rem;
 }
 
-/* Agrega la estrella "★" */
 .stat-star::after {
     content: "★";
     color: var(--amarillo);
-    /* Asegúrate de que tenga el mismo tamaño */
     font-size: 2.25rem; 
     font-weight: 900;
     margin-left: 0.25rem;
@@ -525,16 +530,12 @@ body {
     flex: 1;
 }
 
-/* DESCRIPCIÓN */
 .stat-description {
     font-size: 0.9375rem;
     color: var(--gris-medio);
     font-weight: 500;
 }
 
-/* ===========================
-      NÚMERO GRANDE + +
-   =========================== */
 .stat-number-line {
     display: flex;
     align-items: baseline;
@@ -543,18 +544,6 @@ body {
     font-weight: 900;
     margin-bottom: 0.25rem;
 }
-
-/* NÚMERO CON DEGRADADO */
-.stat-number {
-    background: linear-gradient(135deg, var(--amarillo) 0%, var(--naranja) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-
-
 
 /* ============ WHY SECTION ============ */
 .why-section {
@@ -636,11 +625,6 @@ body {
     font-size: 0.9375rem;
     font-weight: 500;
 }
-
-/* ============================================
-   APRENDIX STYLESHEET - PARTE 2
-   Continuación del diseño
-   ============================================ */
 
 /* ============ FEATURES SECTION ============ */
 .features {
@@ -1143,16 +1127,93 @@ body {
 
 @media (max-width: 768px) {
     .header-container {
-        flex-wrap: wrap;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    /* OCULTAR EL BOTÓN EN HEADER MÓVIL */
+    .header-actions {
+        display: none;
     }
     
     .nav {
-        order: 3;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--blanco);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        gap: 1rem;
+    }
+    
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        gap: 5px;
+    }
+    
+    .nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--cafe);
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
         width: 100%;
-        justify-content: center;
-        gap: 1.5rem;
-        padding-top: 1rem;
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    /* AGREGAR BOTÓN DENTRO DEL MENÚ MÓVIL */
+    /* MOSTRAR EL BOTÓN DENTRO DEL NAV EN MÓVIL */
+    .nav .btn-primary {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.875rem 1.5rem;
+    }
+    
+    /* OCULTAR EL BOTÓN DEL HEADER-ACTIONS EN MÓVIL */
+    .header-actions {
+        display: none;
+    }
+    
+    .header-actions .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .hero {
+        padding: 3rem 1.5rem 2rem;
     }
     
     .hero-title {
@@ -1165,9 +1226,16 @@ body {
     
     .hero-stats {
         gap: 2rem;
+        flex-wrap: wrap;
     }
     
     .stat-number {
+        font-size: 1.75rem;
+    }
+    
+    .stat-plus::after,
+    .stat-lec::after,
+    .stat-star::after {
         font-size: 1.75rem;
     }
     
@@ -1220,12 +1288,20 @@ body {
         padding: 0 1.25rem;
     }
     
+    .header-container {
+        padding: 0.625rem 1.25rem;
+    }
+    
     .hero {
-        padding: 3rem 1.25rem 2rem;
+        padding: 2.5rem 1.25rem 2rem;
     }
     
     .hero-title {
         font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
     }
     
     .hero-buttons {
@@ -1238,8 +1314,13 @@ body {
     }
     
     .hero-stats {
-        flex-wrap: wrap;
+        flex-direction: column;
         gap: 1.5rem;
+        align-items: center;
+    }
+    
+    .stat-item {
+        text-align: center;
     }
     
     .hero-visual {
@@ -1260,11 +1341,95 @@ body {
         font-size: 1.875rem;
     }
     
+    .section-description {
+        font-size: 1rem;
+    }
+    
+    .why-section,
+    .features,
+    .plans {
+        padding: 4rem 1.25rem;
+    }
+    
+    .stats-section {
+        padding: 3rem 1.25rem;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
     .plans-grid {
         grid-template-columns: 1fr;
     }
     
     .footer-links {
         grid-template-columns: 1fr;
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-description {
+        font-size: 1.0625rem;
+    }
+}
+
+/* ============ MEJORAS ADICIONALES PARA MÓVIL ============ */
+@media (max-width: 768px) {
+    /* Asegurar que el header no ocupe mucho espacio */
+    .header {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Mejorar espacio en hero mobile */
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Ajustar tamaño de botones en móvil */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Optimizar cards en móvil */
+    .why-card,
+    .plan-card {
+        padding: 2rem;
+    }
+    
+    /* Mejorar legibilidad en móvil */
+    .feature-description,
+    .why-card p {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+}
+
+/* ============ SMOOTH TRANSITIONS ============ */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* ============ FIX PARA SAFARI MÓVIL ============ */
+@supports (-webkit-touch-callout: none) {
+    .header {
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+    
+    .nav {
+        backdrop-filter: saturate(180%) blur(20px);
     }
 }
