@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - AprendiX</title>
-      <!-- Favicon para todos los navegadores -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-    <!-- Para iOS/Apple -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <!-- Para Android -->
     <link rel="manifest" href="site.webmanifest">
     <style>
         * {
@@ -23,15 +18,17 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: #ffffff;
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #431A05 0%, #1A1A1A 50%, #0F0F0F 75%, #2D1810 100%);
+            color: #FFFFFF;
             line-height: 1.7;
+            min-height: 100vh;
         }
 
         .header {
-            background: linear-gradient(135deg, #431A05 0%, #5d2609 100%);
+            background: rgba(15, 15, 15, 0.95);
             padding: 1.5rem 2rem;
-            color: white;
+            border-bottom: 1px solid rgba(215, 73, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -57,24 +54,27 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 50%, #FF9900 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .back-btn {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(215, 73, 0, 0.2);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: 2px solid rgba(215, 73, 0, 0.4);
         }
 
         .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(215, 73, 0, 0.3);
+            border-color: #D74900;
+            transform: translateY(-2px);
         }
 
         .legal-container {
@@ -87,45 +87,55 @@
             text-align: center;
             margin-bottom: 3rem;
             padding-bottom: 2rem;
-            border-bottom: 3px solid rgba(253, 185, 18, 0.3);
+            border-bottom: 3px solid rgba(215, 73, 0, 0.4);
         }
 
         .legal-header h1 {
             font-size: 2.75rem;
             font-weight: 900;
-            color: #431A05;
+            color: #FFFFFF;
             margin-bottom: 1rem;
         }
 
         .legal-header .subtitle {
-            color: #5d2609;
+            color: #FF9900;
             font-size: 1.125rem;
             font-weight: 600;
         }
 
         .update-date {
-            background: rgba(253, 185, 18, 0.1);
-            color: #D74900;
+            background: rgba(215, 73, 0, 0.2);
+            color: #FF9900;
             padding: 0.5rem 1.5rem;
             border-radius: 100px;
             font-size: 0.875rem;
             font-weight: 700;
             display: inline-block;
             margin-top: 1rem;
+            border: 1px solid rgba(215, 73, 0, 0.3);
         }
 
         .legal-content {
-            background: #ffffff;
+            background: transparent;
         }
 
         .legal-section {
             margin-bottom: 3rem;
+            background: rgba(26, 26, 26, 0.6);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(215, 73, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .legal-section:hover {
+            border-color: rgba(215, 73, 0, 0.4);
         }
 
         .legal-section h2 {
             font-size: 1.75rem;
             font-weight: 800;
-            color: #431A05;
+            color: #FFFFFF;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -139,13 +149,13 @@
         .legal-section h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            color: #5d2609;
+            color: #FF9900;
             margin: 1.5rem 0 0.75rem;
         }
 
         .legal-section p {
             margin-bottom: 1rem;
-            color: #2d2d2d;
+            color: #CCCCCC;
             font-size: 0.9375rem;
         }
 
@@ -156,13 +166,13 @@
 
         .legal-section li {
             margin-bottom: 0.5rem;
-            color: #2d2d2d;
+            color: #CCCCCC;
             font-size: 0.9375rem;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #fff8ec 0%, #ffffff 100%);
-            border-left: 4px solid #FDB912;
+            background: rgba(215, 73, 0, 0.15);
+            border-left: 4px solid #D74900;
             padding: 1.5rem;
             border-radius: 12px;
             margin: 1.5rem 0;
@@ -170,44 +180,45 @@
 
         .highlight-box p {
             margin: 0;
-            color: #431A05;
+            color: #FF9900;
             font-weight: 600;
         }
 
         .important-box {
-            background: linear-gradient(135deg, #fff5e6 0%, #ffffff 100%);
-            border: 2px solid #D74900;
+            background: rgba(255, 111, 0, 0.15);
+            border: 2px solid #FF6F00;
             padding: 1.5rem;
             border-radius: 12px;
             margin: 1.5rem 0;
         }
 
         .important-box h4 {
-            color: #D74900;
+            color: #FF9900;
             margin-bottom: 0.75rem;
             font-size: 1.125rem;
         }
 
         .important-box p {
             margin: 0;
-            color: #431A05;
+            color: #FFFFFF;
         }
 
         .table-wrapper {
             overflow-x: auto;
             margin: 1.5rem 0;
+            border-radius: 12px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: #ffffff;
+            background: rgba(26, 26, 26, 0.8);
             border-radius: 12px;
             overflow: hidden;
         }
 
         th {
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 100%);
             color: white;
             padding: 1rem;
             text-align: left;
@@ -216,7 +227,8 @@
 
         td {
             padding: 1rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(215, 73, 0, 0.2);
+            color: #CCCCCC;
         }
 
         tr:last-child td {
@@ -224,29 +236,43 @@
         }
 
         .contact-info {
-            background: #431A05;
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 100%);
             color: white;
             padding: 2rem;
             border-radius: 16px;
             margin-top: 3rem;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(215, 73, 0, 0.4);
         }
 
         .contact-info h3 {
-            color: #FDB912;
+            color: #FFFFFF;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         .contact-info p {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .contact-info a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #FFFFFF;
         }
 
         .footer {
-            background: #1a1a1a;
+            background: rgba(15, 15, 15, 0.95);
             color: rgba(255, 255, 255, 0.7);
             padding: 2rem;
             text-align: center;
+            border-top: 1px solid rgba(215, 73, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -260,6 +286,10 @@
 
             .legal-container {
                 padding: 2rem 1.25rem;
+            }
+
+            .legal-section {
+                padding: 2rem;
             }
         }
     </style>
@@ -279,12 +309,12 @@
         <div class="legal-header">
             <h1>Política de Privacidad</h1>
             <p class="subtitle">AprendiX by Valdav Software</p>
-            <span class="update-date">Última actualización: Noviembre 2025</span>
+            <span class="update-date">Última actualización: Diciembre 2025</span>
         </div>
 
         <div class="legal-content">
             <div class="important-box">
-                <h4>🔒 Tu privacidad es nuestra prioridad</h4>
+                <h4>Tu privacidad es nuestra prioridad</h4>
                 <p>
                     En Valdav Software nos comprometemos a proteger tu privacidad y manejar tu información 
                     con la máxima responsabilidad y transparencia. Esta política explica cómo recopilamos, 
@@ -293,7 +323,7 @@
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">📋</span>Información que Recopilamos</h2>
+                <h2><span class="section-icon"></span>Información que Recopilamos</h2>
                 
                 <h3>1.1 Información que nos proporcionas directamente</h3>
                 <p>Cuando te registras y usas AprendiX, recopilamos:</p>
@@ -301,18 +331,17 @@
                     <li><strong>Nombre completo:</strong> Para personalizar tu experiencia</li>
                     <li><strong>Correo electrónico:</strong> Para comunicarnos contigo y gestionar tu cuenta</li>
                     <li><strong>Contraseña:</strong> Almacenada de forma cifrada para proteger tu cuenta</li>
-                    <li><strong>Información de perfil:</strong> Foto de perfil, preferencias de aprendizaje</li>
+                    <li><strong>Información de perfil:</strong> Foto de perfil, preferencias de usuario</li>
                 </ul>
 
-                <h3>1.2 Información de uso y aprendizaje</h3>
-                <p>Para personalizar tu experiencia de aprendizaje, registramos:</p>
+                <h3>1.2 Contenido creado por ti</h3>
+                <p>Para proporcionarte nuestros servicios, almacenamos:</p>
                 <ul>
-                    <li>Progreso en lecciones y materias</li>
-                    <li>Respuestas a ejercicios y desafíos</li>
-                    <li>Tiempo dedicado a cada actividad</li>
-                    <li>Puntos XP, niveles alcanzados y logros obtenidos</li>
-                    <li>Notas y contenido creado por ti</li>
-                    <li>Interacciones con la inteligencia artificial</li>
+                    <li>Notas escritas y grabaciones de voz</li>
+                    <li>Contenido generado por IA (resúmenes, desafíos, MemoriX)</li>
+                    <li>Eventos y recordatorios del calendario</li>
+                    <li>Configuración de AprendiX Cube y sesiones de concentración</li>
+                    <li>Objetivos personales y progreso</li>
                 </ul>
 
                 <h3>1.3 Información técnica automática</h3>
@@ -332,7 +361,7 @@
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🎯</span>Cómo Usamos tu Información</h2>
+                <h2><span class="section-icon"></span>Cómo Usamos tu Información</h2>
                 <p>Utilizamos tus datos para:</p>
 
                 <div class="table-wrapper">
@@ -345,8 +374,16 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Personalización</strong></td>
-                                <td>Adaptar el contenido y la dificultad de las lecciones a tu nivel</td>
+                                <td><strong>Funcionalidad básica</strong></td>
+                                <td>Permitir el uso de notas, calendario, AprendiX Cube y todas las funciones</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Personalización con IA</strong></td>
+                                <td>Generar resúmenes, desafíos y juegos basados en tus notas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sincronización</strong></td>
+                                <td>Mantener tu contenido actualizado en todos tus dispositivos</td>
                             </tr>
                             <tr>
                                 <td><strong>Mejora del servicio</strong></td>
@@ -354,19 +391,11 @@
                             </tr>
                             <tr>
                                 <td><strong>Comunicación</strong></td>
-                                <td>Enviarte notificaciones, actualizaciones y soporte técnico</td>
+                                <td>Enviarte notificaciones, recordatorios y soporte técnico</td>
                             </tr>
                             <tr>
                                 <td><strong>Seguridad</strong></td>
-                                <td>Detectar y prevenir fraudes, abusos y actividades no autorizadas</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Facturación</strong></td>
-                                <td>Procesar pagos y gestionar suscripciones</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Análisis</strong></td>
-                                <td>Entender cómo se usa AprendiX para mejorar la experiencia</td>
+                                <td>Detectar y prevenir fraudes y actividades no autorizadas</td>
                             </tr>
                         </tbody>
                     </table>
@@ -374,23 +403,23 @@
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🤖</span>Inteligencia Artificial y tus Datos</h2>
+                <h2><span class="section-icon"></span>Inteligencia Artificial y tus Datos</h2>
                 <p>
-                    AprendiX utiliza IA para personalizar tu aprendizaje. Aquí te explicamos cómo:
+                    AprendiX utiliza IA para potenciar tu productividad. Aquí te explicamos cómo:
                 </p>
                 <ul>
-                    <li>La IA analiza tus respuestas y progreso para adaptar el contenido</li>
-                    <li>Tus datos de aprendizaje se usan para entrenar y mejorar nuestros modelos de IA</li>
-                    <li>Las interacciones con el asistente de IA se registran para mejorar las respuestas</li>
-                    <li>Todos los datos se procesan de forma segura y confidencial</li>
+                    <li>La IA procesa el contenido de tus notas para generar resúmenes personalizados</li>
+                    <li>Crea desafíos y juegos MemoriX basados en tu propio contenido</li>
+                    <li>Tus datos se usan para mejorar los algoritmos de la aplicación</li>
+                    <li>Todo el procesamiento se realiza de forma segura y confidencial</li>
                 </ul>
                 <div class="highlight-box">
-                    <p>🔒 Tus datos personales nunca se comparten con terceros para entrenar modelos de IA externos.</p>
+                    <p>Tus notas personales NUNCA se comparten con terceros ni se usan para entrenar modelos externos.</p>
                 </div>
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🔐</span>Compartir Información</h2>
+                <h2><span class="section-icon"></span>Compartir Información</h2>
                 
                 <h3>NO compartimos tu información personal con terceros, excepto en estos casos:</h3>
                 
@@ -402,16 +431,16 @@
                 </ul>
 
                 <div class="important-box">
-                    <h4>⚠️ Importante</h4>
+                    <h4>Importante</h4>
                     <p>
-                        NUNCA vendemos tu información personal a terceros. NUNCA compartimos tus datos 
-                        de aprendizaje con instituciones educativas sin tu consentimiento explícito.
+                        NUNCA vendemos tu información personal a terceros. NUNCA compartimos el contenido 
+                        de tus notas con terceros sin tu consentimiento explícito.
                     </p>
                 </div>
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🛡️</span>Seguridad de tus Datos</h2>
+                <h2><span class="section-icon"></span>Seguridad de tus Datos</h2>
                 <p>Implementamos múltiples medidas de seguridad:</p>
                 <ul>
                     <li><strong>Cifrado:</strong> Tus datos se transmiten y almacenan de forma cifrada</li>
@@ -424,7 +453,7 @@
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">👤</span>Tus Derechos</h2>
+                <h2><span class="section-icon"></span>Tus Derechos</h2>
                 <p>Como usuario de AprendiX, tienes derecho a:</p>
                 <ul>
                     <li><strong>Acceder:</strong> Solicitar una copia de todos tus datos personales</li>
@@ -436,24 +465,12 @@
                     <li><strong>Retirar consentimiento:</strong> En cualquier momento</li>
                 </ul>
                 <div class="highlight-box">
-                    <p>💡 Para ejercer estos derechos, accede a la configuración de tu cuenta o contáctanos directamente.</p>
+                    <p>Para ejercer estos derechos contáctanos directamente.</p>
                 </div>
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🍪</span>Cookies y Tecnologías Similares</h2>
-                <p>Utilizamos cookies y tecnologías similares para:</p>
-                <ul>
-                    <li>Mantener tu sesión activa</li>
-                    <li>Recordar tus preferencias</li>
-                    <li>Analizar el uso de la aplicación</li>
-                    <li>Mejorar el rendimiento</li>
-                </ul>
-                <p>Puedes gestionar las cookies desde la configuración de tu navegador o dispositivo.</p>
-            </div>
-
-            <div class="legal-section">
-                <h2><span class="section-icon">👨‍👩‍👧‍👦</span>Privacidad de Menores</h2>
+                <h2><span class="section-icon"></span>Privacidad de Menores</h2>
                 <p>
                     AprendiX está diseñado para usuarios de 13 años en adelante. Si eres menor de 18 años, 
                     necesitas el permiso de tus padres o tutores para usar la aplicación.
@@ -463,12 +480,12 @@
                     parental apropiado, eliminaremos esa información inmediatamente.
                 </p>
                 <div class="highlight-box">
-                    <p>👨‍👩‍👧 Padres: pueden contactarnos para revisar, modificar o eliminar la información de sus hijos.</p>
+                    <p>Padres: pueden contactarnos para revisar, modificar o eliminar la información de sus hijos.</p>
                 </div>
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🌍</span>Transferencias Internacionales</h2>
+                <h2><span class="section-icon"></span>Transferencias Internacionales</h2>
                 <p>
                     Tus datos pueden ser transferidos y procesados en servidores ubicados fuera de tu país. 
                     Nos aseguramos de que estas transferencias cumplan con las leyes de protección de datos 
@@ -477,7 +494,7 @@
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">⏱️</span>Retención de Datos</h2>
+                <h2><span class="section-icon"></span>Retención de Datos</h2>
                 <p>Conservamos tu información personal mientras:</p>
                 <ul>
                     <li>Tu cuenta esté activa</li>
@@ -486,13 +503,13 @@
                     <li>Tengamos un interés legítimo en conservarla</li>
                 </ul>
                 <p>
-                    Cuando eliminas tu cuenta, tus datos personales se eliminan o anonimiza en un plazo 
+                    Cuando eliminas tu cuenta, tus datos personales se eliminan o anonimizan en un plazo 
                     de 30 días, excepto cuando debamos conservarlos por obligaciones legales.
                 </p>
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">🔄</span>Cambios a esta Política</h2>
+                <h2><span class="section-icon"></span>Cambios a esta Política</h2>
                 <p>
                     Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos sobre 
                     cambios significativos a través de:
@@ -509,7 +526,7 @@
             </div>
 
             <div class="legal-section">
-                <h2><span class="section-icon">📞</span>Contacto y Consultas</h2>
+                <h2><span class="section-icon"></span>Contacto y Consultas</h2>
                 <p>
                     Si tienes preguntas, inquietudes o solicitudes relacionadas con tu privacidad y 
                     el manejo de tus datos personales, puedes contactarnos:
@@ -530,8 +547,7 @@
                 <p><strong>Valdav Software</strong></p>
                 <p>Desarrolladores de AprendiX</p>
                 <p style="margin-top: 1rem;">
-                    <a href="https://valdav-software.vercel.app/" target="_blank" 
-                       style="color: #FDB912; text-decoration: none; font-weight: 700;">
+                    <a href="https://valdav-software.vercel.app/" target="_blank">
                         Visitar Valdav Software →
                     </a>
                 </p>

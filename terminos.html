@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Términos y Condiciones - AprendiX</title>
-      <!-- Favicon para todos los navegadores -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-    <!-- Para iOS/Apple -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <!-- Para Android -->
     <link rel="manifest" href="site.webmanifest">
     <style>
         * {
@@ -23,15 +18,17 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: #ffffff;
-            color: #1a1a1a;
+            background: linear-gradient(135deg, #431A05 0%, #1A1A1A 50%, #0F0F0F 75%, #2D1810 100%);
+            color: #FFFFFF;
             line-height: 1.7;
+            min-height: 100vh;
         }
 
         .header {
-            background: linear-gradient(135deg, #431A05 0%, #5d2609 100%);
+            background: rgba(15, 15, 15, 0.95);
             padding: 1.5rem 2rem;
-            color: white;
+            border-bottom: 1px solid rgba(215, 73, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -57,24 +54,27 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 50%, #FF9900 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .back-btn {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(215, 73, 0, 0.2);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            border: 2px solid rgba(215, 73, 0, 0.4);
         }
 
         .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(215, 73, 0, 0.3);
+            border-color: #D74900;
+            transform: translateY(-2px);
         }
 
         .legal-container {
@@ -87,45 +87,55 @@
             text-align: center;
             margin-bottom: 3rem;
             padding-bottom: 2rem;
-            border-bottom: 3px solid rgba(253, 185, 18, 0.3);
+            border-bottom: 3px solid rgba(215, 73, 0, 0.4);
         }
 
         .legal-header h1 {
             font-size: 2.75rem;
             font-weight: 900;
-            color: #431A05;
+            color: #FFFFFF;
             margin-bottom: 1rem;
         }
 
         .legal-header .subtitle {
-            color: #5d2609;
+            color: #FF9900;
             font-size: 1.125rem;
             font-weight: 600;
         }
 
         .update-date {
-            background: rgba(253, 185, 18, 0.1);
-            color: #D74900;
+            background: rgba(215, 73, 0, 0.2);
+            color: #FF9900;
             padding: 0.5rem 1.5rem;
             border-radius: 100px;
             font-size: 0.875rem;
             font-weight: 700;
             display: inline-block;
             margin-top: 1rem;
+            border: 1px solid rgba(215, 73, 0, 0.3);
         }
 
         .legal-content {
-            background: #ffffff;
+            background: transparent;
         }
 
         .legal-section {
             margin-bottom: 3rem;
+            background: rgba(26, 26, 26, 0.6);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(215, 73, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .legal-section:hover {
+            border-color: rgba(215, 73, 0, 0.4);
         }
 
         .legal-section h2 {
             font-size: 1.75rem;
             font-weight: 800;
-            color: #431A05;
+            color: #FFFFFF;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -133,7 +143,7 @@
         }
 
         .section-number {
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 100%);
             color: white;
             width: 36px;
             height: 36px;
@@ -143,18 +153,19 @@
             justify-content: center;
             font-size: 1rem;
             font-weight: 700;
+            flex-shrink: 0;
         }
 
         .legal-section h3 {
             font-size: 1.25rem;
             font-weight: 700;
-            color: #5d2609;
+            color: #FF9900;
             margin: 1.5rem 0 0.75rem;
         }
 
         .legal-section p {
             margin-bottom: 1rem;
-            color: #2d2d2d;
+            color: #CCCCCC;
             font-size: 0.9375rem;
         }
 
@@ -165,13 +176,13 @@
 
         .legal-section li {
             margin-bottom: 0.5rem;
-            color: #2d2d2d;
+            color: #CCCCCC;
             font-size: 0.9375rem;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #fff8ec 0%, #ffffff 100%);
-            border-left: 4px solid #FDB912;
+            background: rgba(215, 73, 0, 0.15);
+            border-left: 4px solid #D74900;
             padding: 1.5rem;
             border-radius: 12px;
             margin: 1.5rem 0;
@@ -179,34 +190,48 @@
 
         .highlight-box p {
             margin: 0;
-            color: #431A05;
+            color: #FF9900;
             font-weight: 600;
         }
 
         .contact-info {
-            background: #431A05;
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 100%);
             color: white;
             padding: 2rem;
             border-radius: 16px;
             margin-top: 3rem;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(215, 73, 0, 0.4);
         }
 
         .contact-info h3 {
-            color: #FDB912;
+            color: #FFFFFF;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         .contact-info p {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .contact-info a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #FFFFFF;
         }
 
         .footer {
-            background: #1a1a1a;
+            background: rgba(15, 15, 15, 0.95);
             color: rgba(255, 255, 255, 0.7);
             padding: 2rem;
             text-align: center;
+            border-top: 1px solid rgba(215, 73, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -220,6 +245,10 @@
 
             .legal-container {
                 padding: 2rem 1.25rem;
+            }
+
+            .legal-section {
+                padding: 2rem;
             }
         }
     </style>
@@ -239,34 +268,34 @@
         <div class="legal-header">
             <h1>Términos y Condiciones</h1>
             <p class="subtitle">AprendiX by Valdav Software</p>
-            <span class="update-date">Última actualización: Noviembre 2025</span>
+            <span class="update-date">Última actualización: Diciembre 2025</span>
         </div>
 
         <div class="legal-content">
             <div class="legal-section">
                 <h2><span class="section-number">1</span>Aceptación de los Términos</h2>
                 <p>
-                    Bienvenido a AprendiX, una plataforma de aprendizaje con inteligencia artificial desarrollada 
+                    Bienvenido a AprendiX, tu cuaderno potenciado con inteligencia artificial desarrollado 
                     por Valdav Software. Al acceder y utilizar nuestra aplicación, aceptas estar sujeto a estos 
                     Términos y Condiciones. Si no estás de acuerdo con alguno de estos términos, por favor no 
                     utilices nuestros servicios.
                 </p>
                 <div class="highlight-box">
-                    <p>⚠️ Al crear una cuenta o usar AprendiX, confirmas que has leído, entendido y aceptado estos términos.</p>
+                    <p>Al crear una cuenta o usar AprendiX, confirmas que has leído, entendido y aceptado estos términos.</p>
                 </div>
             </div>
 
             <div class="legal-section">
                 <h2><span class="section-number">2</span>Descripción del Servicio</h2>
                 <p>
-                    AprendiX es una plataforma educativa que utiliza inteligencia artificial para proporcionar:
+                    AprendiX es una aplicación de productividad estudiantil que utiliza inteligencia artificial para proporcionar:
                 </p>
                 <ul>
-                    <li>Lecciones personalizadas adaptadas a tu nivel de conocimiento</li>
-                    <li>Sistema de gamificación con XP, niveles y logros</li>
-                    <li>Desafíos individuales y competitivos</li>
-                    <li>Notas inteligentes con capacidades de IA</li>
-                    <li>Seguimiento de progreso y estadísticas detalladas</li>
+                    <li>Notas inteligentes (escritas y por voz) con capacidades de resumen, generación de desafíos y MemoriX</li>
+                    <li>AprendiX Cube: sistema de concentración gamificado</li>
+                    <li>Mi Calendario: gestión de eventos vinculados a notas</li>
+                    <li>Seguimiento de objetivos y estadísticas de progreso</li>
+                    <li>Sincronización en la nube de tu contenido</li>
                 </ul>
                 <p>
                     Valdav Software se reserva el derecho de modificar, suspender o descontinuar cualquier aspecto 
@@ -304,13 +333,14 @@
                 <ul>
                     <li><strong>AprendiX Esencial:</strong> Gratuito con funcionalidades básicas</li>
                     <li><strong>AprendiX+:</strong> $19 MXN/mes con funcionalidades intermedias</li>
-                    <li><strong>AprendiX Premium:</strong> $49 MXN/mes con todas las funcionalidades</li>
+                    <li><strong>AprendiX Premium:</strong> $49 MXN/mes con todas las funcionalidades ilimitadas</li>
                 </ul>
+                <h5>CONSULTA TU REGIÓN</h5>
 
                 <h3>4.2 Facturación</h3>
                 <p>
                     Los planes de pago se facturan mensualmente. El cargo se realizará automáticamente 
-                    hasta que canceles tu suscripción. Los precios están sujetos a cambios con previo aviso.
+                    hasta que canceles tu suscripción. Los precios están sujetos a cambios con previo aviso. Consulta tu región.
                 </p>
 
                 <h3>4.3 Política de Reembolso</h3>
@@ -318,6 +348,7 @@
                     No ofrecemos reembolsos por pagos ya realizados, excepto en casos especiales determinados 
                     por Valdav Software a su discreción.
                 </p>
+                
             </div>
 
             <div class="legal-section">
@@ -333,7 +364,7 @@
                     <li>Revender o redistribuir el servicio sin autorización</li>
                 </ul>
                 <div class="highlight-box">
-                    <p>⚠️ El incumplimiento de estas reglas puede resultar en la suspensión o terminación de tu cuenta.</p>
+                    <p>El incumplimiento de estas reglas puede resultar en la suspensión o terminación de tu cuenta.</p>
                 </div>
             </div>
 
@@ -343,13 +374,13 @@
                 <h3>6.1 Contenido de AprendiX</h3>
                 <p>
                     Todo el contenido disponible en AprendiX, incluyendo pero no limitado a textos, gráficos, 
-                    logotipos, íconos, imágenes, clips de audio, descargas digitales y compilaciones de datos, 
-                    es propiedad de Valdav Software y está protegido por las leyes de derechos de autor.
+                    logotipos, íconos, imágenes y software, es propiedad de Valdav Software y está protegido 
+                    por las leyes de derechos de autor.
                 </p>
 
                 <h3>6.2 Contenido del Usuario</h3>
                 <p>
-                    Retienes todos los derechos sobre el contenido que crees en AprendiX (notas, respuestas, etc.). 
+                    Retienes todos los derechos sobre el contenido que crees en AprendiX (notas, grabaciones de voz, etc.). 
                     Sin embargo, nos otorgas una licencia para usar, almacenar y procesar este contenido para 
                     proporcionar y mejorar el servicio.
                 </p>
@@ -364,11 +395,10 @@
             <div class="legal-section">
                 <h2><span class="section-number">7</span>Inteligencia Artificial</h2>
                 <p>
-                    AprendiX utiliza tecnología de inteligencia artificial para personalizar tu experiencia de 
-                    aprendizaje. Al usar nuestro servicio:
+                    AprendiX utiliza tecnología de inteligencia artificial para mejorar tu productividad. Al usar nuestro servicio:
                 </p>
                 <ul>
-                    <li>Aceptas que la IA puede procesar tus datos de aprendizaje y progreso</li>
+                    <li>Aceptas que la IA puede procesar el contenido de tus notas para generar resúmenes, desafíos y juegos</li>
                     <li>Reconoces que las respuestas generadas por IA pueden no ser 100% precisas</li>
                     <li>Entiendes que la IA aprende y mejora con el tiempo</li>
                     <li>No debes confiar exclusivamente en las respuestas de la IA para decisiones importantes</li>
@@ -386,7 +416,7 @@
                     <li>Daños indirectos, incidentales o consecuentes</li>
                     <li>Pérdida de datos o información</li>
                     <li>Interrupciones del servicio</li>
-                    <li>Decisiones tomadas basándose en el contenido de AprendiX</li>
+                    <li>Decisiones tomadas basándose en el contenido generado por IA</li>
                 </ul>
             </div>
 
@@ -430,8 +460,7 @@
                 <p><strong>Valdav Software</strong></p>
                 <p>Desarrolladores de AprendiX</p>
                 <p style="margin-top: 1rem;">
-                    <a href="https://valdav-software.vercel.app/" target="_blank" 
-                       style="color: #FDB912; text-decoration: none; font-weight: 700;">
+                    <a href="https://valdav-software.vercel.app/" target="_blank">
                         Visitar Valdav Software →
                     </a>
                 </p>

@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consola - AprendiX</title>
-      <!-- Favicon para todos los navegadores -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-    <!-- Para iOS/Apple -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-    <!-- Para Android -->
     <link rel="manifest" href="site.webmanifest">
     <style>
         * {
@@ -23,7 +18,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #431A05 0%, #5d2609 100%);
+            background: linear-gradient(135deg, #431A05 0%, #1A1A1A 50%, #0F0F0F 75%, #2D1810 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -31,10 +26,10 @@
         }
 
         .header {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(15, 15, 15, 0.95);
             backdrop-filter: blur(10px);
             padding: 1.25rem 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(215, 73, 0, 0.3);
         }
 
         .header-container {
@@ -60,25 +55,26 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 50%, #FF9900 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .back-btn {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(215, 73, 0, 0.2);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(215, 73, 0, 0.4);
         }
 
         .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(215, 73, 0, 0.3);
+            border-color: #D74900;
             transform: translateY(-2px);
         }
 
@@ -88,17 +84,41 @@
             align-items: center;
             justify-content: center;
             padding: 2rem;
+            position: relative;
+        }
+
+        .maintenance-content::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(215, 73, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(50px, -50px);
+            }
         }
 
         .maintenance-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(26, 26, 26, 0.8);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(215, 73, 0, 0.3);
             border-radius: 24px;
             padding: 4rem 3rem;
-            max-width: 600px;
+            max-width: 700px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
         }
 
         .maintenance-icon {
@@ -108,32 +128,25 @@
         }
 
         @keyframes rotate {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-10deg); }
-            75% { transform: rotate(10deg); }
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-10deg) scale(1.1); }
+            75% { transform: rotate(10deg) scale(1.1); }
         }
 
         .maintenance-card h1 {
             font-size: 2.5rem;
             font-weight: 900;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 50%, #FF9900 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .maintenance-card p {
-            font-size: 1.125rem;
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-        }
-
         .status-badge {
             display: inline-block;
-            background: rgba(253, 185, 18, 0.2);
-            color: #FDB912;
+            background: rgba(215, 73, 0, 0.2);
+            color: #FF9900;
             padding: 0.5rem 1.5rem;
             border-radius: 100px;
             font-size: 0.875rem;
@@ -141,20 +154,30 @@
             margin-bottom: 2rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            border: 1px solid rgba(215, 73, 0, 0.4);
+        }
+
+        .maintenance-card p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #CCCCCC;
+            margin-bottom: 2rem;
         }
 
         .features-list {
             text-align: left;
             margin: 2rem 0;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(15, 15, 15, 0.5);
             padding: 2rem;
             border-radius: 16px;
+            border: 1px solid rgba(215, 73, 0, 0.2);
         }
 
         .features-list h3 {
             font-size: 1.25rem;
             margin-bottom: 1rem;
-            color: #FDB912;
+            color: #FF9900;
+            text-align: center;
         }
 
         .features-list ul {
@@ -162,15 +185,18 @@
         }
 
         .features-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            padding: 0.75rem 0;
+            padding-left: 2rem;
             position: relative;
+            color: #CCCCCC;
+            font-size: 0.9375rem;
         }
 
         .features-list li::before {
-            content: '⚡';
+            content: '📝';
             position: absolute;
             left: 0;
+            font-size: 1.25rem;
         }
 
         .cta-buttons {
@@ -178,6 +204,7 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2.5rem;
         }
 
         .btn {
@@ -186,35 +213,56 @@
             text-decoration: none;
             font-weight: 700;
             transition: all 0.3s ease;
+            font-size: 0.9375rem;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #FDB912 0%, #D74900 100%);
+            background: linear-gradient(135deg, #D74900 0%, #FF6F00 100%);
             color: white;
-            box-shadow: 0 4px 16px rgba(253, 185, 18, 0.3);
+            box-shadow: 0 4px 16px rgba(215, 73, 0, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(253, 185, 18, 0.4);
+            box-shadow: 0 8px 24px rgba(215, 73, 0, 0.5);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(215, 73, 0, 0.2);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(215, 73, 0, 0.4);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(215, 73, 0, 0.3);
+            border-color: #D74900;
             transform: translateY(-3px);
         }
 
+        .info-box {
+            background: rgba(215, 73, 0, 0.1);
+            border-left: 4px solid #D74900;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 1rem;
+            color: #CCCCCC;
+        }
+
+        .info-box strong {
+            color: #FF9900;
+        }
+
         .footer {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(15, 15, 15, 0.95);
             padding: 2rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(215, 73, 0, 0.3);
         }
 
         .footer p {
@@ -238,6 +286,10 @@
             .btn {
                 width: 100%;
             }
+
+            .features-list {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -258,28 +310,32 @@
             
             <span class="status-badge">En Desarrollo</span>
             
-            <h1>Consola en Construcción</h1>
+            <h1>Consola Web en Construcción</h1>
             
             <p>
-                Estamos trabajando arduamente para traerte una experiencia increíble. 
-                La consola de AprendiX estará disponible muy pronto con funcionalidades 
-                avanzadas para gestionar tu aprendizaje.
+                Estamos trabajando en traerte una experiencia web completa para gestionar 
+                tu productividad desde cualquier lugar. La consola estará disponible muy pronto.
             </p>
 
             <div class="features-list">
                 <h3>Próximamente disponible:</h3>
                 <ul>
-                    <li>Dashboard personalizado de estudiante</li>
-                    <li>Gestión avanzada de materias y metas</li>
-                    <li>Estadísticas detalladas de progreso</li>
-                    <li>Acceso a contenido exclusivo</li>
-                    <li>Configuración de preferencias de IA</li>
+                    <li>Acceso web completo a tus notas</li>
+                    <li>Gestión de calendario desde el navegador</li>
+                    <li>Estadísticas detalladas de tu progreso</li>
+                    <li>Configuración avanzada de cuenta</li>
+                    <li>Sincronización en tiempo real con la app móvil</li>
+                    <li>Exportación de notas en múltiples formatos</li>
                 </ul>
             </div>
 
-            <p style="font-size: 1rem; margin-top: 2rem;">
-                Mientras tanto, puedes descargar la app móvil y comenzar tu viaje de aprendizaje.
-            </p>
+            <div class="info-box">
+                <p>
+                    <strong>💡 Mientras tanto:</strong> Puedes usar la app móvil de AprendiX 
+                    para crear notas, usar AprendiX Cube, gestionar tu calendario y mucho más. 
+                    Todo tu contenido se sincronizará automáticamente cuando la consola web esté lista.
+                </p>
+            </div>
 
             <div class="cta-buttons">
                 <a href="https://play.google.com/store/apps/details?id=valdav.aprendix" 
